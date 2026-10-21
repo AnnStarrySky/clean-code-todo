@@ -3,7 +3,7 @@ const addButton = document.getElementsByTagName("button")[0];
 const incompleteTaskHolder = document.getElementById("incompleteTasks");
 const completedTasksHolder = document.getElementById("completed-tasks");
 
-const createNewTaskElement = function (taskString) {
+const createNewTaskElement = function (taskText) {
   const listItem = document.createElement("li");
   const checkBox = document.createElement("input");
   const label = document.createElement("label");
@@ -13,7 +13,7 @@ const createNewTaskElement = function (taskString) {
   const deleteButtonImg = document.createElement("img");
 
   //innerText encodes special characters, HTML does not.
-  label.innerText = taskString;
+  label.innerText = taskText;
   label.className = "task";
 
   checkBox.type = "checkbox";
@@ -49,15 +49,15 @@ const editTask = function () {
   const listItem = this.parentNode;
   const editInput = listItem.querySelector("input[type=text]");
   const label = listItem.querySelector("label");
-  const editBtn = listItem.querySelector(".edit");
-  const containsClass = listItem.classList.contains("editMode");
+  const editButton = listItem.querySelector(".edit");
+  const isEditing = listItem.classList.contains("editMode");
 
-  if (containsClass) {
+  if (isEditing) {
     label.innerText = editInput.value;
-    editBtn.innerText = "Edit";
+    editButton.innerText = "Edit";
   } else {
     editInput.value = label.innerText;
-    editBtn.innerText = "Save";
+    editButton.innerText = "Save";
   }
 
   listItem.classList.toggle("editMode");
@@ -65,8 +65,8 @@ const editTask = function () {
 
 const deleteTask = function () {
   const listItem = this.parentNode;
-  const ul = listItem.parentNode;
-  ul.removeChild(listItem);
+  const taskList = listItem.parentNode;
+  taskList.removeChild(listItem);
 };
 
 const toggleTask = function () {
