@@ -4,25 +4,25 @@ body {
   color: #333;
   font-family: Lato, sans-serif;
 }
-.aaa {
+.matrix-info {
   width: 500px;
   margin: 0 auto;
   display: block;
   text-align: right;
 }
-.aaa img {
+.matrix-info img {
   width: 100%;
 }
-.aaa .more_inf {
+.matrix-info .more_info {
   font-family: fantasy, cursive;
 }
 
 @media (max-width: 768px) {
-  .aaa {
+  .matrix-info {
     text-align: center;
   }
 }
-.centered-main-page-element {
+.app {
   display: block;
   width: 500px;
   margin: 0 auto 0;
@@ -149,6 +149,6 @@ ul li.editMode label {
   display: none;
 }
 
-#topSectionForAddingElementToList {
+#add-task-section {
   margin: 1em 0;
 }
