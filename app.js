@@ -1,4 +1,4 @@
-const taskInput = document.getElementById("new-task");
+const newTaskInput = document.getElementById("new-task");
 const addButton = document.getElementById("add-task");
 const incompleteTasksList = document.getElementById("incompleteTasks");
 const completedTasksList = document.getElementById("completed-tasks");
@@ -36,14 +36,14 @@ const createNewTaskElement = function (taskText) {
 };
 
 const addTask = function () {
-  const taskText = taskInput.value.trim();
+  const taskText = newTaskInput.value.trim();
   if (!taskText) return;
   const listItem = createNewTaskElement(taskText);
 
   incompleteTasksList.appendChild(listItem);
   bindTaskEvents(listItem);
 
-  taskInput.value = "";
+  newTaskInput.value = "";
 };
 
 const editTask = function () {
